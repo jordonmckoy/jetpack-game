@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Jetpack John</title>
+
+        <!-- Import Game Files -->
+        <script src="lib/jquery-1.7.2.min.js"></script>
+        <script src="lib/EntityClass.js"></script>
+        <script src="lib/AnimClass.js"></script>s
+        <script src="src/Game.js"></script>
+        <script src="src/Button.js"></script>
+        <script src="src/Player.js"></script>
+        <script src="src/Star.js"></script>
+        <script src="src/Rocket.js"></script>
+        <script src="src/Missile.js"></script>
+        <script src="src/ContentManager.js"></script>
+        <script src="src/GameController.js"></script>
+        <script src="src/StarController.js"></script>
+        <script src="src/RocketController.js"></script>
+        <script src="src/MissileController.js"></script>
+        <script src="src/Menu.js"></script>
+        
+        <!-- End Game Imports -->
+
+        <style type="text/css">
+            body {
+                text-align: center;
+            }
+
+            #container {
+                position: absolute;
+                margin: 0 auto;
+                top: 0px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+            }
+
+            .canvas{
+                border: 1px solid;
+            }
+
+            #Displaycanvas {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                z-index: 0;
+            }
+
+            #Gamecanvas {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                z-index: 1;
+            }
+
+            #HUDcanvas {
+                position: absolute;
+                left: 650px;
+                z-index: 2;
+            }
+
+            
+        </style>
+    </head>
+    <body onload="init()">
+        <div id="container">
+            <canvas class="canvas" id="Displaycanvas"></canvas>
+            <canvas class="canvas" id="Gamecanvas">
+                Your browser does not support HTML5 and the canvas element.
+            </canvas>
+            <canvas id="HUDcanvas"></canvas>         
+        </div>
+        <br><br>
+        <div>
+            <br><br><p id="diag"></p>
+        </div>
+    </body>
+</html>
