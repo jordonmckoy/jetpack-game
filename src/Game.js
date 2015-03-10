@@ -26,7 +26,7 @@ window.cancelAnimFrame = function(callback){
 	return (
 		window.cancelAnimationFrame || window.mozCancelAnimationFrame
 	);
-}
+};
 
 ///////////////////////////////////////////////////////
 
@@ -136,7 +136,7 @@ function checkHit (mouseX,mouseY) {
 	var i,j;
 	//console.log(mouseX + "," + mouseY);
 	for (i=0; i < objArray.length; i++) {
-		if (objArray[i] != null) {
+		if (objArray[i] !== null) {
 			if (typeof objArray[i].clickCheck === 'function') {
 				objArray[i].clickCheck();
 			}
@@ -167,10 +167,10 @@ function EngineLoop(){
  	if (gameState == "paused") {
  		try {
  			display_ctx.drawImage(pausedIMG,(canvas.width/2)-185,(canvas.height/2)-37);
- 		} catch (e) {console.log("failed draw");};
+ 		} catch (e) {console.log("failed draw");}
  	} else if (gameState == "gameover") {
  		for (i=0; i < objArray.length; i++) {
-			if (objArray[i] != null) {
+			if (objArray[i] !== null) {
 				objArray[i].destroy();
 			}
 		}
@@ -183,7 +183,7 @@ function EngineLoop(){
 		display_ctx.fillRect(0,0,display_canvas.width,display_canvas.height);
  		try {
  			display_ctx.drawImage(gameoverIMG,(canvas.width/2)-231,(canvas.height/2)-36);
- 		} catch (e) {console.log("failed draw");};
+ 		} catch (e) {console.log("failed draw");}
  		setTimeout(menuCreate,3000);
  	}
 }
@@ -198,7 +198,7 @@ function update() {
 	manageRocket();
 	manageMissile();
 	for (i=0; i < objArray.length; i++) {
-		if (objArray[i] != null) {
+		if (objArray[i] !== null) {
 			objArray[i].update();
 		}
 	}
@@ -211,7 +211,7 @@ function clr(context,width,height) {
 function render() {
 	drawHUD();
 	for (i=0; i < objArray.length; i++) {
-		if (objArray[i] != null) {
+		if (objArray[i] !== null) {
 			objArray[i].render();
 		}
 	}

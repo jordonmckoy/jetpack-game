@@ -89,15 +89,15 @@ function Star(a,b,width,height,context,src,speed) {
 					gameScore += 150;
 				}
 		}
-	}
+	};
 
 	this.render = function() {
 		this.shine.animate();
 		try {
 			// (img,sx,sy,swidth,sheight,dx,dy,dwidth,dheight);
 			this.context.drawImage(this.img,this.shine.x,this.shine.y,24,24,this.x,this.y,24,24);
-		} catch (e) {console.log("failed draw");};
+		} catch (e) {console.log("failed draw");}
+	};
 
-	}
 }
 Star.prototype = new entity();

@@ -16,9 +16,9 @@ function Player(a,b,width,height,context,src) {
 
 	// 
 	this.falling = true;
-	this.gravity = .95;
+	this.gravity = 0.95;
 	this.vY = 0;
-	this.accelY = .35;
+	this.accelY = 0.35;
 
 	this.update = function() {
 		if (this.falling) {
@@ -38,29 +38,28 @@ function Player(a,b,width,height,context,src) {
 		} else if (this.y <= 0) {
 			this.y = 2;
 		}
-	}
+	};
 
 	this.render = function() {
 		this.fly.animate();
 		try {
 			// (img,sx,sy,swidth,sheight,dx,dy,dwidth,dheight);
 			this.context.drawImage(this.img,this.fly.x,this.fly.y,26,61,this.x,this.y,26,61);
-		} catch (e) {console.log("failed draw");};
-	}
+		} catch (e) {console.log("failed draw");}
+	};
 
 	this.inputDown = function() {
 		if (this.falling) {
 			this.vY = 0;
 		}
-		this.falling = false;
-		
-	}
+		this.falling = false;	
+	};
 
 	this.inputUp = function() {
 		if (!this.falling) {
 			this.vY = 0;
 		}
 		this.falling = true;
-	}
+	};
 }
 Player.prototype = new entity();
